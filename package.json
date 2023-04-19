@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "name": "schedule_html",
+  "version": "1.0.0",
+  "description": "my schedule for streaming",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zulleyy3",
+  "license": "MIT"
+}

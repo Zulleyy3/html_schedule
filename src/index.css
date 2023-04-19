@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    /* background-color: #eeeeee; */
+    background: linear-gradient(90deg, #e66465, #9198e5);
+    /* background: linear-gradient(red 40%, yellow 39%, blue 65%); */
+    ;
+}
+
+#calendar {
+    /* aspect-ratio: 16/9; */
+    flex: auto;
+    /* margin: 5em 10em 5em 10em; */
+    /* padding: 1%; */
+}
+
+input[type="datetime-local"] {
+    font-family: "Roboto-Mono", monospace;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    margin: 3px;
+    /* I will probably not use this but knowing that these can be styled is nice
+     * instead I want to hide this behind something that pretends to be a date
+     * Actually, don't even hide it behind it. 
+     */
+    /*https://www.youtube.com/watch?v=LdT4X9GAjr4 <-TODO: get inspired */
+}
+
+.calendar_entry {
+    background: rgba(127, 255, 212, 0.6);
+    flex: auto;
+    color: black;
+    padding: 20px 10px;
+}
+
+.eventList {
+    flex-direction: column;
+}
+
+input[type="text"],
+select,
+textarea {
+    background: none;
+    border: none;
+}
+input[type=text]::spelling-error {
+    background: green;
+}
+
+.date {
+    /*TODO: Make this appear only if they are not in the same line*/
+    border-right: 3px dotted rgba(128, 128, 128, 0.5);
+    padding-right: 3px;
+    margin-right: 3px;
+}
+
+.calendar_entry:nth-of-type(odd) {
+    border: 5px solid red;
+    margin-right: 3em;
+}
+
+.calendar_entry:nth-of-type(even) {
+    border: 5px dotted green;
+    margin-left: 3em;
+}
