@@ -10,3 +10,20 @@
     <div id="calendar"></div>
 </body>
 </html>
+
+
+<template id=calendar_entry_tmpl>
+    <div class="calendar_entry container">
+        <time class="date container_item">foo</time>
+        <input type=date class="date_selector" hidden="true"></input>
+        <div class="event_list container_item"></div>
+    </div>
+</template>
+
+<template id=event_entry_tmpl>
+    <div class="event_entry event_list_item">
+        <time class="time"></time>
+        <input type=time class="time_selector" hidden="true"></input>
+        <input type="text" class="event_description" value="foo"></input>
+    </div>
+</template>

@@ -2,6 +2,11 @@ html {
     box-sizing: border-box;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
     /* background-color: #eeeeee; */
     background: linear-gradient(90deg, #e66465, #9198e5);
@@ -9,10 +14,14 @@ body {
     ;
 }
 
+
 #calendar {
+    grid-auto-rows: 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* width: 600px; */
     /* aspect-ratio: 16/9; */
-    flex: auto;
-    /* margin: 5em 10em 5em 10em; */
+    margin: 5em 10em 5em 10em;
     /* padding: 1%; */
 }
 
@@ -31,13 +40,25 @@ input[type="datetime-local"] {
 
 .calendar_entry {
     background: rgba(127, 255, 212, 0.6);
-    flex: auto;
     color: black;
     padding: 20px 10px;
+    display:flex;
+    gap: 1rem;
+    justify-content: flex-start;
 }
 
-.eventList {
-    flex-direction: column;
+.event_list {
+    margin: 1%;
+    flex-grow: 3;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+/* .eventList::before { */
+.event_list::before {
+    content: "";
+    border: 1px dashed #d3d3d3;
+    align-self: stretch;
 }
 
 input[type="text"],
@@ -50,11 +71,18 @@ input[type=text]::spelling-error {
     background: green;
 }
 
+.event_entry:nth-last-child(n+2) {
+    border-bottom: 2px dotted green;
+}
+
 .date {
     /*TODO: Make this appear only if they are not in the same line*/
-    border-right: 3px dotted rgba(128, 128, 128, 0.5);
-    padding-right: 3px;
-    margin-right: 3px;
+    /* border-right: 3px dotted rgba(128, 128, 128, 0.5); */
+    padding: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
 }
 
 .calendar_entry:nth-of-type(odd) {
